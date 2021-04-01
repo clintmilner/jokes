@@ -11,11 +11,8 @@ const Joke = () => {
         const headers = {
             'Accept': 'application/json'
         }
-        console.info('loading joke')
         const response = await fetch(URL, {headers})
         const data = await response.json()
-
-        console.info(data)
 
         setJoke(data?.joke)
         setLoading(false)
@@ -27,7 +24,7 @@ const Joke = () => {
 
 
     return <div className="joke">
-        {loading ? <img width={100} src={logo} className="loading" alt="logo"/> : <p>{joke}</p>}
+        {loading ? <img width={100} src={logo} className="loading" alt="loading"/> : <p>{joke}</p>}
         <button onClick={loadJoke}>tell me another one</button>
     </div>
 }
