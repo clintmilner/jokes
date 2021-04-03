@@ -1,6 +1,6 @@
 import './App.css';
 import Joke from "./Joke";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import gradients from './gradients.json'
 
 
@@ -23,6 +23,10 @@ const App = () => {
         setJoke(data?.joke)
         setLoading(false)
     }
+
+    useEffect(() => {
+        loadJoke()
+    },[])
 
   return (
     <div className="App" style={{
